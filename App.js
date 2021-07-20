@@ -3,16 +3,25 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import Login from './component/Login'
-import MyTabs from './component/MyTabs'
+
+// import MyTabs from './component/MyTabs'
+// export default function App() {
+//   return (
+//     // <View style={styles.container}>
+//     //   <Login/>
+//     // </View>
+//     <NavigationContainer>
+//       <MyTabs />
+//     </NavigationContainer>
+
+import ForgetPassWord from './component/forgetPassWord'
 
 export default function App() {
   return (
-    // <View style={styles.container}>
-    //   <Login/>
-    // </View>
-    <NavigationContainer>
-      <MyTabs />
-    </NavigationContainer>
+    <View style={styles.container}>
+      {/* <Login/> */}
+      <ForgetPassWord/>
+    </View>
   );
 }
 
