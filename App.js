@@ -7,12 +7,12 @@ import MyTabs from './component/MyTabs'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Login/>
-    </View>
-    // <NavigationContainer>
-    //   <MyTabs />
-    // </NavigationContainer>
+    // <View style={styles.container}>
+    //   <Login/>
+    // </View>
+    <NavigationContainer>
+      <MyTabs />
+    </NavigationContainer>
   );
 }
 
