@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Text, TextInput, View, Dimensions, Image, SafeAreaView } from 'react-native';
+import { Text, TextInput, View, Dimensions, Image, SafeAreaView, StyleSheet, Alert, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper/src';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 const { width } = Dimensions.get('window')
 
 
@@ -51,6 +52,28 @@ const styles = {
     flex: 1
   },
 
+  input: {
+    bottom: 700,
+    position: 'relative',
+    width: 300,
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    borderRadius: 10,
+    color: '#f7a70a',
+    borderColor: '#f7a70a',
+    backgroundColor: '#fff',
+  },
+  shopping: {
+    bottom: 745,
+    marginLeft: 330,
+    height: 35,
+    width: 35,
+    position: 'relative',
+    borderRadius: 30,
+    color: '#fff',
+  },
+
 }
 
 export class ShopScreen extends Component {
@@ -71,7 +94,7 @@ export class ShopScreen extends Component {
                 height: 5,
                 borderRadius: 4,
                 marginLeft: 3,
-                marginTop: -1100,
+                marginTop: -1000,
               }}
             />
           }
@@ -83,7 +106,7 @@ export class ShopScreen extends Component {
                 height: 8,
                 borderRadius: 4,
                 marginLeft: 3,
-                marginTop: -1100,
+                marginTop: -1000,
               }}
             />
           }
@@ -121,7 +144,15 @@ export class ShopScreen extends Component {
 
         </Swiper>
         <View>
-          <Text>Mua sắm!</Text>
+          <TouchableOpacity
+            style={styles.button}
+          >
+            <TextInput
+              style={styles.input}
+              placeholder='   Tìm kiếm   '
+            />
+          </TouchableOpacity>
+          <MaterialCommunityIcons style={styles.shopping} name="shopping" size={25} />
         </View>
       </SafeAreaView>
     )
