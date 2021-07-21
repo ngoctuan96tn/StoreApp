@@ -39,13 +39,9 @@ export default class App extends Component {
           title={'Đăng nhập'}
           onPress={this.onLogin.bind(this)}
         />
-        {/* <View style={styles.contentView}>
-          <Text>Chưa có tài khoản? </Text>
-          <Text style={styles.rigisterText}>Đăng ký</Text>
-        </View> */}
         <Text style={styles.rigisterText}>Chưa có tài khoản? Đăng ký</Text>
 
-        <Text>---------------- HOẶC ĐĂNG NHẬP BẰNG ----------------</Text>
+        <Text>-------- HOẶC ĐĂNG NHẬP BẰNG --------</Text>
         <Button
           title={'SỐ ĐIỆN THOẠI'}
           onPress={this.onLogin.bind(this)}
@@ -60,18 +56,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#f7a70a',
     height: 300
   },
-  // contentView: {
-  //   paddingLeft: 10,
-  //   flex: 1,
-  //   flexDirection:'row',
-  //   marginTop: 20,
-  //   flexWrap:'wrap',
-  // },
   input: {
-    width: 400,
+    width: 350,
     padding: 10,
     borderWidth: 2,
     marginBottom: 10,
@@ -86,9 +74,10 @@ const styles = StyleSheet.create({
     marginLeft: 215
   },
   titleText: {
-    fontSize: 30,
-    marginBottom: 10,
+    fontSize: 35,
+    marginBottom: 60,
     marginRight: 60,
+    color: '#fff'
   },
   rigisterText: {
     color: '#fff',
