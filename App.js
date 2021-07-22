@@ -1,8 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import Login from './component/Login'
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import Login from './component/Login';
+// import ForgetPassWord from './component/ForgetPassWord';
+// import Register from './component/Register';
+// import CameraExpo from './component/CameraExpo';
+// import ImagePicker from './component/ImagePicker';
 
 // import MyTabs from './component/MyTabs'
 // export default function App() {
@@ -14,21 +17,23 @@ import Login from './component/Login'
 //       <MyTabs />
 //     </NavigationContainer>
 
-import ForgetPassWord from './component/forgetPassWord'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <Login/> */}
-      <ForgetPassWord/>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Login/>
+      {/* <ForgetPassWord/> */}
+      {/* <Register/> */}
+      {/* <CameraExpo/> */}
+      {/* <ImagePicker/> */}
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f7a70a',
     alignItems: 'center',
     justifyContent: 'center',
   },
