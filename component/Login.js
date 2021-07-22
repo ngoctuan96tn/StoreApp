@@ -1,54 +1,54 @@
-import React, { Component } from 'react';
-import { Alert, Button, TextInput, View, StyleSheet, Text, Image } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, SafeAreaView } from 'react-native';
+import {
+  Input,
+  Heading,
+  NativeBaseProvider,
+  Button,
+} from "native-base"
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    
-    this.state = {
-      username: '',
-      password: '',
-    };
-  }
-  
-  onLogin() {
-    const { username, password } = this.state;
+export default function Login() {
+  const [show, setShow] = React.useState(false)
 
-    Alert.alert('Credentials', `${username} + ${password}`);
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.titleText}>Đăng nhập</Text>
-        <TextInput
-          value={this.state.username}
-          onChangeText={(username) => this.setState({ username })}
-          placeholder={'Số điện thoại / Email'}
-          style={styles.input}
+  const handleClick = () => setShow(!show)
+  return (
+    <SafeAreaView style={styles.container}>
+      <NativeBaseProvider >
+        <Heading size="md" textAlign='center' marginTop='35' color='#fff' fontSize='27' marginRight='10'>ĐĂNG NHẬP</Heading>
+        <Input
+          width='300'
+          size="sm"
+          marginTop='70'
+          marginBottom='10'
+          variant="outline"
+          placeholder="Email"
+          _light={{
+            placeholderTextColor: "blueGray.400",
+          }}
+          _dark={{
+            placeholderTextColor: "blueGray.50",
+          }}
         />
-        <TextInput
-          value={this.state.password}
-          onChangeText={(password) => this.setState({ password })}
-          placeholder={'Mật khẩu'}
-          secureTextEntry={true}
-          style={styles.input}
+        <Input
+          size="sm"
+          marginBottom='10'
+          type={show ? "text" : "password"}
+          InputRightElement={
+            <Button ml={1} roundedLeft={0} roundedRight="md" onPress={handleClick}>
+              {show ? "Hide" : "Show"}
+            </Button>
+          }
+          placeholder="Password"
         />
-        <Text style={styles.baseText}>Quên mật khẩu</Text>
-        <Button
-          title={'Đăng nhập'}
-          onPress={this.onLogin.bind(this)}
-        />
-        <Text style={styles.rigisterText}>Chưa có tài khoản? Đăng ký</Text>
-
-        <Text>-------- HOẶC ĐĂNG NHẬP BẰNG --------</Text>
-        <Button
-          title={'SỐ ĐIỆN THOẠI'}
-          onPress={this.onLogin.bind(this)}
-        />
-      </View>
-    );
-  }
+        <Text fontSize="sm">Quên mật khẩu</Text>
+        <Button size="md" marginBottom='5' marginTop='5' backgroundColor='green' onPress={() => console.log()}>Đăng nhập</Button>
+        <Text fontSize="sm" marginBottom='10'>Chưa có tài khoản? Đăng ký</Text>
+        <Text fontSize="sm">-------- Hoặc đăng nhập bằng --------</Text>
+        <Button size="md" marginTop='10' colorScheme="secondary" onPress={() => console.log()}>Số điện thoại</Button>
+        <Button size="md" marginTop='2' colorScheme="primary" onPress={() => console.log()}>FaceBook</Button>
+      </NativeBaseProvider>
+    </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -56,33 +56,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    height: 300
-  },
-  input: {
-    width: 350,
-    padding: 10,
-    borderWidth: 2,
-    marginBottom: 10,
-    borderBottomColor: '#fff',
-    borderTopWidth: 0,
-    borderLeftWidth: 0,
-    borderRightWidth: 0
-  },
-  baseText: {
-    fontSize: 15,
-    color: '#fff',
-    marginLeft: 215
-  },
-  titleText: {
-    fontSize: 35,
-    marginBottom: 60,
-    marginRight: 60,
-    color: '#fff'
-  },
-  rigisterText: {
-    color: '#fff',
-    fontSize: 15,
-    marginBottom: 30,
-    marginTop: 20
   },
 });

@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import Login from './component/Login';
 // import ForgetPassWord from './component/ForgetPassWord';
 // import Register from './component/Register';
@@ -20,13 +20,13 @@ import Login from './component/Login';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Login/>
       {/* <ForgetPassWord/> */}
       {/* <Register/> */}
       {/* <CameraExpo/> */}
       {/* <ImagePicker/> */}
-    </View>
+    </SafeAreaView>
   );
 }
 
